@@ -1,1 +1,34 @@
+/* ===== Go To Main Page Button ===== */
+.mainPageBtn{
+    display:block;
+    width:200px;
+    margin:8px auto 18px;
+    padding:10px 15px;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:.5px;
+    box-shadow:0 0 12px rgba(255,65,108,.7);
+    animation:glowMainBtn 1.2s infinite alternate;
+    transition:.3s;
+}
 
+.mainPageBtn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #ff512f,
+               0 0 40px #dd2476;
+}
+
+@keyframes glowMainBtn{
+    from{
+        box-shadow:0 0 10px rgba(255,65,108,.7);
+    }
+    to{
+        box-shadow:0 0 25px #ff512f,
+                   0 0 45px #dd2476;
+    }
+}
