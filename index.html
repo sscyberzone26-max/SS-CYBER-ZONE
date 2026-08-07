@@ -147,15 +147,71 @@ line-height:1.8;
 }
 
 #result{
-
-margin-top:20px;
-
+margin:5px 0 0;
 text-align:center;
-
-font-size:18px;
-
+font-size:15px;
+line-height:1.35;
 color:green;
 }
+
+#result.generating{
+margin:5px 0 0;
+text-align:center;
+font-size:14px;
+line-height:1.35;
+color:#007bff;
+font-weight:bold;
+}
+
+.tokenDownloadBtn{
+display:inline-block;
+width:auto;
+padding:10px 18px;
+margin-top:12px;
+background:#28a745;
+color:#fff;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+}
+
+.tokenDownloadBtn:hover{
+background:#218838;
+}
+
+.passwordRow{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:10px;
+}
+
+.passwordRow input{
+margin-top:0;
+}
+
+.passwordToggle{
+width:auto;
+margin-top:0;
+padding:10px 12px;
+background:#6c757d;
+white-space:nowrap;
+}
+
+.rememberRow{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:10px;
+font-size:14px;
+}
+
+.rememberRow input{
+width:auto;
+margin:0;
+}
+
 
 .adminPanel{
 display:none;
@@ -261,6 +317,77 @@ font-weight:bold;
     font-weight:bold;
 }
 
+/* ===== SESSION STATUS ===== */
+.sessionClosedStatus{
+    background:#ffe5e5 !important;
+    color:#c62828 !important;
+    border:1px solid #ef9a9a;
+}
+
+.upcomingStatus{
+    background:#fff4d6 !important;
+    color:#9a6700 !important;
+    border:1px solid #f2c66d;
+}
+
+.openStatus{
+    background:#e8f5e9 !important;
+    color:#187a2f !important;
+    border:1px solid #a5d6a7;
+}
+
+
+.closedNotice{
+    margin:12px 0 18px;
+    padding:16px 12px;
+    text-align:center;
+    border-radius:12px;
+    background:#fff4d6;
+    border:1px solid #f2c66d;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+.closedTitle{
+    font-size:22px;
+    font-weight:900;
+    color:#c62828;
+    margin-bottom:7px;
+}
+.closedPhone{
+    font-size:17px;
+    font-weight:800;
+    color:#222;
+    margin-bottom:5px;
+}
+.closedEmail{
+    font-size:14px;
+    font-weight:700;
+    color:#444;
+}
+.closedSubTitle{
+    font-size:18px;
+    font-weight:900;
+    color:#9a6700;
+    margin-bottom:8px;
+}
+.closedMainPageBtn{
+    display:inline-block;
+    width:auto;
+    min-width:140px;
+    padding:8px 15px;
+    margin-top:12px;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+    border-radius:25px;
+    font-size:13px;
+    font-weight:700;
+    box-shadow:0 0 10px rgba(255,65,108,.55);
+}
+.closedMainPageBtn:hover{
+    transform:scale(1.04);
+}
+
 </style>
 
 </head>
@@ -278,7 +405,7 @@ Admin
 
 </button>
 <div class="liveDateTime" id="liveDateTime">
-    <div class="liveLabel">● Live</div>
+    <div class="liveLabel">â— Live</div>
     <div class="liveDate" id="liveDate"></div>
     <div class="liveDate" id="liveTime"></div>
 </div>
@@ -293,6 +420,18 @@ Loading...
 
 <!-- USER SECTION -->
 
+<div id="closedNotice" class="closedNotice" style="display:none;">
+    <div class="closedTitle" id="closedTitle">Starting Soon</div>
+    <div class="closedSubTitle" id="closedSubTitle">Season End</div>
+    <div class="closedPhone">Con +91 8617866041</div>
+    <div class="closedEmail">sscyberzone26@gmail.com</div>
+    <a href="https://sscyberzone26-max.github.io/token-generator2/"
+       target="_blank"
+       class="closedMainPageBtn">
+       ðŸ  Main page
+    </a>
+</div>
+
 <div id="userSection">
 
 <h2>Token Form</h2>
@@ -300,7 +439,7 @@ Loading...
 <a href="https://sscyberzone26-max.github.io/token-generator2/"
    target="_blank"
    class="mainPageBtn">
-   🏠 Main page
+   ðŸ  Main page
 </a>
 
 <form id="tokenForm">
@@ -341,23 +480,39 @@ Select Visit Purpose
 </option>
 
 <option value="DBT Link">
-DBT Link
+DBT Link / à¦¡à¦¿à¦¬à¦¿à¦Ÿà¦¿ à¦²à¦¿à¦™à§à¦•
 </option>
 
 <option value="Yubosokti">
-Yubosokti
+Yubosokti / à¦¯à§à¦¬à¦¶à¦•à§à¦¤à¦¿
 </option>
 
 <option value="Arnopurnavander">
-Arnopurnavander
+Arnopurnavander / à¦…à¦¨à§à¦¨à¦ªà§‚à¦°à§à¦£à¦¾ à¦­à¦¾à¦£à§à¦¡à¦¾à¦°
 </option>
 
 <option value="CAA">
-CAA
+CAA / à¦¸à¦¿à¦à¦
+</option>
+
+<option value="Ration Card">
+Ration Card / à¦°à§‡à¦¶à¦¨ à¦•à¦¾à¦°à§à¦¡
+</option>
+
+<option value="Voter Card">
+Voter Card / à¦­à§‹à¦Ÿà¦¾à¦° à¦•à¦¾à¦°à§à¦¡
+</option>
+
+<option value="PAN Card">
+PAN Card / à¦ªà§à¦¯à¦¾à¦¨ à¦•à¦¾à¦°à§à¦¡
+</option>
+
+<option value="Jonogonona">
+Jonogonona / à¦œà¦¨à¦—à¦£à¦¨à¦¾
 </option>
 
 <option value="Others">
-Others
+Others / à¦…à¦¨à§à¦¯à¦¾à¦¨à§à¦¯
 </option>
 
 </select>
@@ -380,6 +535,8 @@ Generate Token
 
 </button>
 
+<h3 id="result"></h3>
+
 <button type="button"
 class="refreshBtn"
 onclick="location.reload()">
@@ -390,22 +547,22 @@ Refresh Page
 
 <div class="noticeBox">
 
-<b>গুরুত্বপূর্ণ নির্দেশিকা :</b>
+<b>à¦—à§à¦°à§à¦¤à§à¦¬à¦ªà§‚à¦°à§à¦£ à¦¨à¦¿à¦°à§à¦¦à§‡à¦¶à¦¿à¦•à¦¾ :</b>
 
 <ul style="
 padding-left:18px;
 margin-top:8px;">
 
 <li>
-এক মোবাইল নম্বর দ্বিতীয় বার ব্যবহার করা যাবে না।
+à¦à¦• à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦®à§à¦¬à¦° à¦¦à§à¦¬à¦¿à¦¤à§€à§Ÿ à¦¬à¦¾à¦° à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦¯à¦¾à¦¬à§‡ à¦¨à¦¾à¥¤
 </li>
 
 <li>
-এক ফোন নম্বরে একাধিক ফর্ম হলে কথা বলে টোকেন নিতে হবে।
+à¦à¦• à¦«à§‹à¦¨ à¦¨à¦®à§à¦¬à¦°à§‡ à¦à¦•à¦¾à¦§à¦¿à¦• à¦«à¦°à§à¦® à¦¹à¦²à§‡ à¦•à¦¥à¦¾ à¦¬à¦²à§‡ à¦Ÿà§‹à¦•à§‡à¦¨ à¦¨à¦¿à¦¤à§‡ à¦¹à¦¬à§‡à¥¤
 </li>
 
 <li>
-আধার কার্ডের শেষ ৪ ডিজিট দিতে হবে।
+à¦†à¦§à¦¾à¦° à¦•à¦¾à¦°à§à¦¡à§‡à¦° à¦¶à§‡à¦· à§ª à¦¡à¦¿à¦œà¦¿à¦Ÿ à¦¦à¦¿à¦¤à§‡ à¦¹à¦¬à§‡à¥¤
 </li>
 
 </ul>
@@ -413,8 +570,6 @@ margin-top:8px;">
 </div>
 
 </form>
-
-<h3 id="result"></h3>
 
 </div>
 
@@ -429,9 +584,17 @@ style="display:none;">
 id="adminUser"
 placeholder="Username">
 
+<div class="passwordRow">
 <input type="password"
 id="adminPass"
 placeholder="Password">
+<button type="button" class="passwordToggle" onclick="togglePassword('adminPass', this)">Show</button>
+</div>
+
+<div class="rememberRow">
+<input type="checkbox" id="rememberMe">
+<label for="rememberMe">Remember me</label>
+</div>
 
 <button onclick="loginAdmin()">
 
@@ -467,6 +630,10 @@ Time Wise Open
 
 <option value="slot">
 Slot Wise Open
+</option>
+
+<option value="closed">
+Session Closed
 </option>
 
 </select>
@@ -559,9 +726,12 @@ Save Settings
 id="subUser"
 placeholder="Sub Admin Username">
 
+<div class="passwordRow">
 <input type="password"
 id="subPass"
 placeholder="Sub Admin Password">
+<button type="button" class="passwordToggle" onclick="togglePassword('subPass', this)">Show</button>
+</div>
 
 <button onclick="addSubAdmin()">
 
@@ -598,13 +768,19 @@ No Activity
 
 <h3>Change Password</h3>
 
+<div class="passwordRow">
 <input type="password"
 id="oldPass"
 placeholder="Old Password">
+<button type="button" class="passwordToggle" onclick="togglePassword('oldPass', this)">Show</button>
+</div>
 
+<div class="passwordRow">
 <input type="password"
 id="newPass"
 placeholder="New Password">
+<button type="button" class="passwordToggle" onclick="togglePassword('newPass', this)">Show</button>
+</div>
 
 <button onclick="changePassword()">
 
@@ -761,6 +937,34 @@ document.getElementById("otherReason")
 
 /* LOGIN */
 
+/* Password show/hide */
+function togglePassword(id, button){
+    const input = document.getElementById(id);
+    if(!input) return;
+
+    if(input.type === "password"){
+        input.type = "text";
+        button.innerText = "Hide";
+    }else{
+        input.type = "password";
+        button.innerText = "Show";
+    }
+}
+
+/* Remember admin login on this browser */
+function loadRememberedAdmin(){
+    try{
+        const saved = JSON.parse(localStorage.getItem("sscyberzone_admin_login") || "null");
+        if(saved && saved.user && saved.pass){
+            document.getElementById("adminUser").value = saved.user;
+            document.getElementById("adminPass").value = saved.pass;
+            document.getElementById("rememberMe").checked = true;
+        }
+    }catch(e){}
+}
+
+loadRememberedAdmin();
+
 function toggleLogin(){
 
 document.getElementById("userSection")
@@ -773,11 +977,10 @@ document.getElementById("loginBox")
 
 function backToHome(){
 
-document.getElementById("userSection")
-.style.display = "block";
-
 document.getElementById("loginBox")
 .style.display = "none";
+
+updateClock();
 
 }
 
@@ -791,6 +994,15 @@ document.getElementById("adminPass").value;
 
 if(user === mainAdmin.user &&
 pass === mainAdmin.pass){
+
+    if(document.getElementById("rememberMe").checked){
+        localStorage.setItem(
+            "sscyberzone_admin_login",
+            JSON.stringify({user:user,pass:pass})
+        );
+    }else{
+        localStorage.removeItem("sscyberzone_admin_login");
+    }
 
 currentRole = "main";
 
@@ -866,8 +1078,7 @@ function logoutAdmin(){
 document.getElementById("adminPanel")
 .style.display = "none";
 
-document.getElementById("userSection")
-.style.display = "block";
+updateClock();
 
 }
 
@@ -1029,104 +1240,325 @@ return hour.toString().padStart(2,'0')
 
 function updateClock(){
 
-let now = new Date();
+    let now = new Date();
 
-let currentHour =
-now.getHours().toString().padStart(2,'0');
+    let currentHour =
+        now.getHours().toString().padStart(2,'0');
 
-let currentMinute =
-now.getMinutes().toString().padStart(2,'0');
+    let currentMinute =
+        now.getMinutes().toString().padStart(2,'0');
 
-let currentTime =
-currentHour + ":" + currentMinute;
+    let currentTime =
+        currentHour + ":" + currentMinute;
 
-document.getElementById("liveClock")
-.innerHTML =
-"Time : " + currentTime;
+    document.getElementById("liveClock")
+        .innerHTML = "Time : " + currentTime;
 
-let text = "";
+    let statusBox =
+        document.getElementById("publicStatus");
 
-let start24 =
-convertTo24(startTime,startAmPm);
+    let text = "";
+    let statusClass = "";
 
-let end24 =
-convertTo24(endTime,endAmPm);
+    /* SESSION CLOSED */
+    if(openMode === "closed"){
 
-/* ALWAYS */
+        text = "ðŸ”´ Season Closed";
+        statusClass = "sessionClosedStatus";
 
-if(openMode === "always"){
+        disableTokenForm(
+            "Season Closed. Please check again later.",
+            "Season Closed",
+            "Season End"
+        );
 
-text =
-"Service : Always Open";
+    }
+
+    /* ALWAYS OPEN */
+    else if(openMode === "always"){
+
+        text = "ðŸŸ¢ LIVE â€¢ Token Service Open";
+        statusClass = "openStatus";
+
+        enableTokenForm();
+
+    }
+
+    /* TIME WISE */
+    else if(openMode === "time"){
+
+        if(!startTime || !endTime){
+
+            text = "ðŸŸ¡ Starting Soon";
+            statusClass = "upcomingStatus";
+
+            disableTokenForm(
+                "Session timing is not configured yet.",
+                "Starting Soon",
+                "Season End"
+            );
+
+        }else{
+
+            let start24 =
+                convertTo24(startTime,startAmPm);
+
+            let end24 =
+                convertTo24(endTime,endAmPm);
+
+            let isOvernight = start24 > end24;
+
+            let isOpen =
+                isOvernight
+                    ? (currentTime >= start24 || currentTime <= end24)
+                    : (currentTime >= start24 && currentTime <= end24);
+
+            if(isOpen){
+
+                let remaining =
+                    Number(timeSlotLimit || 0) -
+                    Number(tokenCount || 0);
+
+                if(
+                    timeSlotLimit !== null &&
+                    remaining <= 0
+                ){
+
+                    text = "ðŸ”´ Time Slot Full";
+                    statusClass = "sessionClosedStatus";
+
+                    disableTokenForm(
+                        "Today's time-wise slots are full.",
+                        "Slot Full",
+                        "Season End"
+                    );
+
+                }else{
+
+                    text =
+                        "ðŸŸ¢ LIVE â€¢ " +
+                        startTime + " " + startAmPm +
+                        " - " +
+                        endTime + " " + endAmPm;
+
+                    if(timeSlotLimit !== null){
+
+                        text +=
+                            " | Slot Left : " +
+                            Math.max(0, remaining);
+
+                    }
+
+                    statusClass = "openStatus";
+                    enableTokenForm();
+
+                }
+
+            }else{
+
+                let beforeStart =
+                    isOvernight
+                        ? (currentTime > end24 && currentTime < start24)
+                        : currentTime < start24;
+
+                if(beforeStart){
+
+                    text =
+                        "ðŸŸ¡ Starting Soon â€¢ Opens " +
+                        startTime + " " + startAmPm;
+
+                    statusClass = "upcomingStatus";
+
+                    disableTokenForm(
+                        "Session will open at " +
+                        startTime + " " + startAmPm,
+                        "Starting Soon",
+                        "Season End"
+                    );
+
+                }else{
+
+                    text = "ðŸ”´ Season Closed";
+                    statusClass = "sessionClosedStatus";
+
+                    disableTokenForm(
+                        "Today's session is closed."
+                    );
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /* SLOT WISE */
+    else if(openMode === "slot"){
+
+        let remaining =
+            Number(slotLimit || 0) -
+            Number(tokenCount || 0);
+
+        if(slotLimit === null){
+
+            text = "ðŸŸ¡ Starting Soon";
+            statusClass = "upcomingStatus";
+
+            disableTokenForm(
+                "Slot limit is not configured yet.",
+                "Starting Soon",
+                "Season End"
+            );
+
+        }else if(remaining <= 0){
+
+            text = "ðŸ”´ Season Closed â€¢ All Slots Full";
+            statusClass = "sessionClosedStatus";
+
+            disableTokenForm(
+                "All slots are full.",
+                "Slot Full",
+                "Season End"
+            );
+
+        }else{
+
+            text =
+                "ðŸŸ¢ LIVE â€¢ Slot Remaining : " +
+                remaining;
+
+            statusClass = "openStatus";
+            enableTokenForm();
+
+        }
+
+    }
+
+    statusBox.innerHTML = text;
+
+    statusBox.classList.remove(
+        "sessionClosedStatus",
+        "upcomingStatus",
+        "openStatus"
+    );
+
+    if(statusClass){
+        statusBox.classList.add(statusClass);
+    }
 
 }
 
-/* TIME */
 
-else if(openMode === "time"){
+/* =====================================================
+   PUBLIC FORM LOCK / UNLOCK
+===================================================== */
 
-if(currentTime >= start24 &&
-currentTime <= end24){
+function disableTokenForm(message, title, subtitle){
 
-text =
-"Open : " +
+    const form = document.getElementById("tokenForm");
+    if(!form) return;
 
-startTime + " " +
-startAmPm +
+    form.dataset.serviceClosed = "true";
 
-" To " +
+    const userSection = document.getElementById("userSection");
+    if(userSection) userSection.style.display = "none";
 
-endTime + " " +
-endAmPm +
+    form.style.display = "none";
 
-" | Slot Left : " +
+    const notice = document.getElementById("closedNotice");
+    if(notice){
+        notice.style.display = "block";
 
-(timeSlotLimit - tokenCount);
+        const titleEl = document.getElementById("closedTitle");
+        const subtitleEl = document.getElementById("closedSubTitle");
 
-}
+        if(titleEl) titleEl.innerText = title || "Starting Soon";
+        if(subtitleEl) subtitleEl.innerText = subtitle || "Season End";
+    }
 
-else{
-
-text =
-"Service Closed";
-
-}
-
-}
-
-/* SLOT */
-
-else if(openMode === "slot"){
-
-let remaining =
-slotLimit - tokenCount;
-
-if(remaining <= 0){
-
-text =
-"All Slots Full";
+    const result = document.getElementById("result");
+    if(result) result.innerText = "";
 
 }
 
-else{
+function enableTokenForm(){
 
-text =
-"Slot Remaining : " +
-remaining;
+    const form = document.getElementById("tokenForm");
+    if(!form) return;
+
+    form.dataset.serviceClosed = "false";
+
+    const userSection = document.getElementById("userSection");
+    if(userSection) userSection.style.display = "block";
+
+    form.style.display = "block";
+
+    const notice = document.getElementById("closedNotice");
+    if(notice) notice.style.display = "none";
+
+    Array.from(
+        form.querySelectorAll("input, select, textarea, button")
+    ).forEach(function(el){
+        el.disabled = false;
+    });
+
+    const generateBtn =
+        form.querySelector('button[type="submit"]');
+
+    if(generateBtn){
+        generateBtn.innerText = "Generate Token";
+    }
 
 }
 
+
+/* ===== DAILY PHONE / AADHAAR RESTRICTION ===== */
+function getTodayKey(){
+    const now = new Date();
+    return now.getFullYear() + "-" +
+           String(now.getMonth() + 1).padStart(2,"0") + "-" +
+           String(now.getDate()).padStart(2,"0");
 }
 
-document.getElementById("publicStatus")
-.innerHTML = text;
-
+function getDailyUsed(){
+    const key = "sscyberzone_daily_used_" + getTodayKey();
+    try{
+        return JSON.parse(localStorage.getItem(key) ||
+            '{"phones":[],"aadhaars":[]}');
+    }catch(e){
+        return {phones:[],aadhaars:[]};
+    }
 }
 
-loadServerData();
-setInterval(updateClock,1000);
-setInterval(loadServerData,5000);
-updateClock();
+function saveDailyUsed(used){
+    localStorage.setItem(
+        "sscyberzone_daily_used_" + getTodayKey(),
+        JSON.stringify(used)
+    );
+}
+
+function checkDailyDuplicate(phone,aadhaar){
+    const used = getDailyUsed();
+    const p = String(phone || "").replace(/\D/g,"");
+    const a = String(aadhaar || "").trim();
+
+    if(used.phones.includes(p)) return "phone";
+    if(used.aadhaars.includes(a)) return "aadhaar";
+    return "";
+}
+
+function rememberDailyUse(phone,aadhaar){
+    const used = getDailyUsed();
+    const p = String(phone || "").replace(/\D/g,"");
+    const a = String(aadhaar || "").trim();
+
+    if(p && !used.phones.includes(p)) used.phones.push(p);
+    if(a && !used.aadhaars.includes(a)) used.aadhaars.push(a);
+
+    saveDailyUsed(used);
+}
+
 
 /* TOKEN */
 
@@ -1136,7 +1568,31 @@ async function(e){
 
 e.preventDefault();
 
+    
+    if(
+        document.getElementById("tokenForm").dataset.serviceClosed === "true"
+    ){
+
+        alert("Session Closed / Upcoming Soon. Token cannot be generated.");
+
+        return;
+
+    }
+
     /* Get latest settings and real token count from server */
+    await loadServerData();
+
+    if(
+        document.getElementById("tokenForm").dataset.serviceClosed === "true"
+    ){
+
+        alert("Session Closed / Upcoming Soon. Token cannot be generated.");
+
+        return;
+
+    }
+
+/* Get latest settings and real token count from server */
     await loadServerData();
 
 let now = new Date();
@@ -1185,14 +1641,34 @@ return;
 
 }
 
+const phoneValue =
+"+91" + document.getElementById("phone").value;
+
+const aadhaarValue =
+document.getElementById("aadhaar").value.trim();
+
+const dailyDuplicate =
+checkDailyDuplicate(phoneValue,aadhaarValue);
+
+if(dailyDuplicate === "phone"){
+document.getElementById("result").innerHTML =
+"à¦†à¦œ à¦à¦‡ Phone Number à¦¦à¦¿à§Ÿà§‡ Token à¦¨à§‡à¦“à§Ÿà¦¾ à¦¹à§Ÿà§‡à¦›à§‡à¥¤";
+return;
+}
+
+if(dailyDuplicate === "aadhaar"){
+document.getElementById("result").innerHTML =
+"à¦†à¦œ à¦à¦‡ Aadhaar Last 4 Digit à¦¦à¦¿à§Ÿà§‡ Token à¦¨à§‡à¦“à§Ÿà¦¾ à¦¹à§Ÿà§‡à¦›à§‡à¥¤";
+return;
+}
+
 const data = {
 
 name:
 document.getElementById("name").value,
 
 phone:
-"+91" +
-document.getElementById("phone").value,
+phoneValue,
 
 address:
 document.getElementById("address").value,
@@ -1213,20 +1689,46 @@ document.getElementById("otherReason").value
 document.getElementById("visit").value,
 
 aadhaar:
-document.getElementById("aadhaar").value
+aadhaarValue,
+
+requestDate:
+getTodayKey()
 
 };
 
-const response = await fetch(scriptURL,{
+let response;
+let result;
 
-method:"POST",
+try{
 
-body:JSON.stringify(data)
+    response = await fetch(scriptURL,{
 
-});
+        method:"POST",
 
-const result =
-await response.json();
+        body:JSON.stringify(data)
+
+    });
+
+    result = await response.json();
+
+}catch(error){
+
+    console.error("Token generation error:", error);
+
+    document.getElementById("result").className = "";
+    document.getElementById("result").innerHTML =
+        "Token generation failed. Please try again.";
+
+    const generateBtn =
+        document.querySelector('#tokenForm button[type="submit"]');
+
+    if(generateBtn){
+        generateBtn.disabled = false;
+        generateBtn.innerText = "Generate Token";
+    }
+
+    return;
+}
 
 if(result.status ===
 "duplicate_phone"){
@@ -1248,35 +1750,75 @@ document.getElementById("result")
 
 else{
 
-/* Token is already stored in Google Sheet.
-   Refresh the real server count. */
-await loadServerData();
-updateClock();
+    const resultBox = document.getElementById("result");
+    const generateBtn = document.querySelector('#tokenForm button[type="submit"]');
 
-let tokenText =
+    /* Show loading state while the server response is being finalized. */
+    resultBox.className = "generating";
+    resultBox.innerHTML = "Please wait...<br>Generating Token...";
+    if(generateBtn){
+        generateBtn.disabled = true;
+        generateBtn.innerText = "Please Wait...";
+    }
 
-"Token Number : " +
-result.token +
+    /* Build token text BEFORE downloading. */
+    const tokenText =
+        "Token Number : " +
+        result.token +
 
-"\n\nName : " +
-data.name +
+        "\n\nName : " +
+        data.name +
 
-"\nPhone : " +
-data.phone +
+        "\nPhone : " +
+        data.phone +
 
-"\nVisit : " +
-data.visit +
+        "\nAddress : " +
+        data.address +
 
-"\nAadhaar Last 4 : " +
-data.aadhaar;
+        "\nVisit : " +
+        data.visit +
 
-document.getElementById("result")
-.innerHTML =
+        "\nAadhaar Last 4 : " +
+        data.aadhaar +
 
-"Your Token Number : " +
-result.token;
+        "\nDate : " +
+        data.requestDate;
 
-downloadToken(tokenText,result.token);
+    rememberDailyUse(data.phone,data.aadhaar);
+
+    await loadServerData();
+    updateClock();
+
+    /* Small delay so the user can clearly see the generating state. */
+    await new Promise(function(resolve){
+        setTimeout(resolve, 700);
+    });
+
+    const blob = new Blob(
+        [tokenText],
+        {type:"text/plain;charset=utf-8"}
+    );
+    const downloadUrl = URL.createObjectURL(blob);
+
+    resultBox.className = "";
+    resultBox.innerHTML =
+        "Your Token Number : <b>" +
+        result.token +
+        "</b><br>" +
+        '<a class="tokenDownloadBtn" href="' +
+        downloadUrl +
+        '" download="Token-' +
+        result.token +
+        '.txt">â¬‡ Download Token</a>';
+
+    if(generateBtn){
+        generateBtn.disabled = false;
+        generateBtn.innerText = "Generate Token";
+    }
+
+    setTimeout(function(){
+        URL.revokeObjectURL(downloadUrl);
+    }, 60000);
 
 }
 
@@ -1286,21 +1828,25 @@ downloadToken(tokenText,result.token);
 
 function downloadToken(text,tokenNo){
 
-let blob = new Blob(
+const blob = new Blob(
 [text],
-{type:"text/plain"}
+{type:"text/plain;charset=utf-8"}
 );
 
-let link =
-document.createElement("a");
+const url = URL.createObjectURL(blob);
+const link = document.createElement("a");
 
-link.href =
-URL.createObjectURL(blob);
+link.href = url;
+link.download = "Token-" + tokenNo + ".txt";
+link.style.display = "none";
 
-link.download =
-"Token-" + tokenNo + ".txt";
-
+document.body.appendChild(link);
 link.click();
+
+setTimeout(function(){
+    link.remove();
+    URL.revokeObjectURL(url);
+},1000);
 
 }
 
